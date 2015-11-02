@@ -21,6 +21,7 @@ var path = require('path');
 var fs = require('fs');
 var glob = require('glob');
 var ghPages = require('gulp-gh-pages');
+var server;
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -285,3 +286,4 @@ try { require('web-component-tester').gulp.init(gulp); } catch (err) {}
 
 // Load custom tasks from the `tasks` directory
 try { require('require-dir')('tasks'); } catch (err) {}
+
