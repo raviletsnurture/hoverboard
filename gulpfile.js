@@ -22,7 +22,7 @@ var fs = require('fs');
 var glob = require('glob');
 var ghPages = require('gulp-gh-pages');
 var server;
-
+//var connect = require('gulp-connect');
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
   'ie_mob >= 10',
@@ -280,10 +280,17 @@ gulp.task('deploy', ['default'], function (cb) {
     cb);
 });
 
+/*gulp.task('webserver', function(){
+ connect.server();
+});*/
+
+//gulp.task('default', ['webserver']);
+
 // Load tasks for web-component-tester
 // Adds tasks for `gulp test:local` and `gulp test:remote`
 try { require('web-component-tester').gulp.init(gulp); } catch (err) {}
 
 // Load custom tasks from the `tasks` directory
 try { require('require-dir')('tasks'); } catch (err) {}
+
 
